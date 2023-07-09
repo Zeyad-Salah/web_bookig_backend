@@ -1,0 +1,394 @@
+{
+	"info": {
+		"_postman_id": "4664811a-eeff-4d3d-8999-239548a1343b",
+		"name": "web-booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27667603"
+	},
+	"item": [
+		{
+			"name": "create tour",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Bankok, Thailand\",\r\n    \"city\": \"Bankok\",\r\n    \"address\": \"Somewhere in London\",\r\n    \"distance\": 300,\r\n    \"price\": 99,\r\n    \"maxGroupSize\": 10,\r\n    \"desc\": \"this is the description\",\r\n    \"reviews\": [],\r\n    \"photo\": \"/tour-images/tour-img01.jpg\",\r\n    \"featured\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/tours",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"tours"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update tour",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Jaflong, Sylhet\",\r\n    \"price\": 30\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/tours/64aa04a39539e9a0b188c05c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"tours",
+						"64aa04a39539e9a0b188c05c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete tour",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/tours/64aa0ba1c14fac03429079c5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"tours",
+						"64aa0ba1c14fac03429079c5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get single tour",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/tours/64aa04a39539e9a0b188c05c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"tours",
+						"64aa04a39539e9a0b188c05c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all tours",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/v1/tours",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"tours"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search tour",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/v1/tours/search/getTourBySearch?price=30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"tours",
+						"search",
+						"getTourBySearch"
+					],
+					"query": [
+						{
+							"key": "price",
+							"value": "30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get featured tours",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/tours/search/getFeaturedTours",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"tours",
+						"search",
+						"getFeaturedTours"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get tour count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/tours/search/getTourCount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"tours",
+						"search",
+						"getTourCount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"zeyad\",\r\n    \"email\": \"zeyad@hotmail.com\",\r\n    \"password\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"zeyad@hotmail.com\",\r\n    \"password\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adding a review to a tour",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"zeyad\",\r\n    \"reviewText\":\"beatiful place\",\r\n    \"rating\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/review/64aa12a3c00360fb552dde66",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"review",
+						"64aa12a3c00360fb552dde66"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create booking",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tourName\":\"Jaflong, sylhet\",\r\n    \"fullName\":\"Zeyad Salah\",\r\n    \"guestSize\":8,\r\n    \"phone\":1059848115,\r\n    \"bookAt\":\"2023-07-08\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/booking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get single booking",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tourName\":\"Jaflong, sylhet\",\r\n    \"fullName\":\"Zeyad Salah\",\r\n    \"guestSize\":8,\r\n    \"phone\":1059848115,\r\n    \"bookAt\":\"2023-07-08\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/booking/64aa58969fc2357e6775a4ef",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"booking",
+						"64aa58969fc2357e6775a4ef"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all bookings",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tourName\":\"Jaflong, sylhet\",\r\n    \"fullName\":\"Zeyad Salah\",\r\n    \"guestSize\":8,\r\n    \"phone\":1059848115,\r\n    \"bookAt\":\"2023-07-08\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/booking/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"booking",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
